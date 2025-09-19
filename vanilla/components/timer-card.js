@@ -1,10 +1,12 @@
-import { StatefulHTMLElement, State } from "../utils/state.js";
 import Timer from "../utils/timer.js";
-class PTimerCard extends StatefulHTMLElement {
+
+class PTimerCard extends HTMLElement {
     constructor() {
         super();
+        this.root = this.attachShadow({mode: "closed"});
         this.timer = new Timer(this);
-        this.innerHTML = `
+        this.root.innerHTML = `
+            <link rel="stylesheet" href="../styles.css"></link>
             <span class="timer-display">${this.timer.toString()}</span>
             <div class="timer-button">
                 <button class="resume-button">Start</button>
@@ -16,8 +18,9 @@ class PTimerCard extends StatefulHTMLElement {
         this.setupEventListeners();
     }
     setupEventListeners() {
-        const resumeButton = this.querySelector(".resume-button");
-        const resetButton = this.querySelector(".reset-button");
+        
+        const resumeButton = this.root.querySelector(".resume-button");
+        const resetButton = this.root.querySelector(".reset-button");
 
         resumeButton.addEventListener("click", () => {
             switch (resumeButton.textContent) {
@@ -43,8 +46,8 @@ class PTimerCard extends StatefulHTMLElement {
         });
     }
     update() {
-        const timerDisplay = this.querySelector(".timer-display");
-        const resumeButton = this.querySelector(".resume-button");
+        const timerDisplay = this.root.querySelector(".timer-display");
+        const resumeButton = this.root.querySelector(".resume-button");
         if (timerDisplay == null) {
             throw new Error("What");
         }

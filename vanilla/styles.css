@@ -46,7 +46,6 @@ img{
     filter: blur(3px) brightness(0.7);
     transform: scale(1.1);
 }
-
 span{
     font-size: 3rem;
     font-weight: bold;
