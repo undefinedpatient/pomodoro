@@ -8,9 +8,16 @@ class Timer {
          * @type {int}
          */
         this.phraseNumber = 0;
+        /**
+         * @type {HTMLElement}
+         */
         this.element = element;
+        /**
+         * @type {int}
+         */
         this.id = null;
     }
+    // Toggle Timer
     toggle() {
         if (this.id != null) {
             clearInterval(this.id);
