@@ -6,7 +6,7 @@ class PTimerCard extends HTMLElement {
         this.root = this.attachShadow({mode: "closed"});
         this.timer = new Timer(this);
         this.root.innerHTML = `
-            <link rel="stylesheet" href="../styles.css"></link>
+            <link rel="stylesheet" href="styles.css"></link>
             <span class="timer-display">${this.timer.toString()}</span>
             <div class="timer-button">
                 <button class="resume-button">Start</button>
