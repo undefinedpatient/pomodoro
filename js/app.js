@@ -2,4 +2,8 @@ import "../components/timer-card.js"
 
 console.log("Connected");
 
-Notification.requestPermission();
+await Notification.requestPermission();
+
+if(Notification.permission !== "denied"){
+    Notification.requestPermission();
+}
