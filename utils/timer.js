@@ -3,7 +3,7 @@ class Timer {
         /**
          * @type {int}
          */
-        this.remainingSec = 5;
+        this.remainingSec = 25*60;
         /**
          * @type {int}
          */
@@ -49,9 +49,9 @@ class Timer {
             return "Time for Longer Rest!";
         }
         if(this.phraseNumber%2==1){
-            return "Time for a rest!";
+            return "Time to Work!";
         }
-        return "Time to work!";
+        return "Time for a Rest!";
     }
     
     reset() {
